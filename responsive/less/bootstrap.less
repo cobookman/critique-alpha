@@ -9,8 +9,7 @@
  */
 
 // Core variables and mixins
-@import "custom-variables.less"; // Modify this for custom colors, font-sizes, etc
-@import "custom-css.less"; //THE APPLICATION's CSS FILES
+@import "custom-variables.less"; // Modify this for custom colors, font-sizes, etc, bottom of file has other non-bootstrap css
 @import "mixins.less";
 
 // CSS Reset
@@ -62,3 +61,6 @@
 
 // Utility classes
 @import "utilities.less"; // Has to be last to override when necessary
+
+//CUSTOM CSS OVERRIDES
+@import "custom-css.less"; 
