@@ -32,7 +32,7 @@
 @navy:					#002B45;
 @navyLight:				#0a324b;
 @navyDark:				#08283c;
-@gold:					#E0AA0F;
+@gold:					rgb(238, 178, 17);
 @goldDark:				#C59D29;
 @metallicGold:			#947550;
 
@@ -202,16 +202,16 @@
 @navbarBrandColor:                @navbarLinkColor;
 
 // Inverted navbar
-@navbarInverseBackground:                @navy;
-@navbarInverseBackgroundHighlight:       @navyLight; //08283c
-@navbarInverseBorder:                    @navyDark;
+@navbarInverseBackground:                @gold;//@navy;
+@navbarInverseBackgroundHighlight:       @gold;//@navyLight; //08283c
+@navbarInverseBorder:                    @gold;
 
 @navbarInverseText:                      @white;
-@navbarInverseLinkColor:                 @white;
-@navbarInverseLinkColorHover:            @goldDark;
+@navbarInverseLinkColor:                 rgb(0, 37, 76);//@white;
+@navbarInverseLinkColorHover:            @white;//@goldDark;
 @navbarInverseLinkColorActive:           @navbarInverseLinkColorHover;
-@navbarInverseLinkBackgroundHover:       transparent;
-@navbarInverseLinkBackgroundActive:      @navbarInverseBackground;
+@navbarInverseLinkBackgroundHover:       rgb(23, 17, 2);//transparent;
+@navbarInverseLinkBackgroundActive:      @navbarInverseLinkBackgroundHover;
 
 @navbarInverseSearchBackground:          lighten(@navbarInverseBackground, 25%);
 @navbarInverseSearchBackgroundFocus:     @white;
