@@ -93,65 +93,134 @@
     </div>
   </div>
   <div class="container">
-  <!-- Search Nav -->
-    <div id="search-nav">
-      <div class="input-append">
-        <input id="search-query" type="text" class="input-xxlarge" placeholder="search the critique" />
-        <button class="btn btn-primary"><i class="icon-search icon-white"></i></button>
+    <div class="row-fluid">
+      <div id="leftbar" class="span8">
+
+        <div id="search-nav">
+          <div class="input-append">
+            <input id="search-query" type="text" class="input-xxlarge" placeholder="search the critique" />
+            <button class="btn btn-primary"><i class="icon-search icon-white"></i></button>
+          </div>
+        </div>
+
+        <div id="courseinfo" class="row-fluid">
+          <h3><a href="#ECE2035">ECE 2035 - <em>Programming</em> HW/SW Systems</a></h3>
+          <p>
+            Creation of complex execution and storage mechanisms, based on instruction set architecture, for software design including high-level programming languages and operating systems. Programming design projects. Credit not allowed for both ECE 2035 and ECE 3035.
+          </p>
+        </div>
+        <!-- Sections -->
+        <div id="prof1" class="row-fluid prof">
+          <div class="span4">
+            <h4>Professor 1</h4>
+            <ul>
+              <li>MWF: 2:00-3:00pm</li>
+              <li>TH: 1-3pm</li>
+              <li>Section: A3</li>
+            </ul>
+          </div>
+          <div class="span8 graph">
+            <a> &lt; </a>
+            <div class="chart"></div>
+            <a> &gt; </a>
+          </div>
+          <div class="row-fluid">
+            <button class="btn btn-primary span12">Add Class</button>
+          </div>
+        </div>
+        
+        <div id="prof2" class="row-fluid prof">
+          <div class="span4">
+            <h4>Professor 2</h4>
+            <ul>
+              <li>TH: 1:00-8:00pm</li>
+              <li>F: 3:00-5:30pm</li>
+              <li>Section: A2</li>
+            </ul>
+          </div>
+          <div class="span8 graph">
+            <a> &lt; </a>
+            <div class="chart"></div>
+            <a> &gt; </a>
+          </div>
+          <div class="row-fluid">
+            <button class="btn btn-primary span12">Add Class</button>
+          </div>
+        </div>
+
+      </div><!-- END LEFT BAR -->
+
+      <div id="rightbar" style="height: 500px; float:right;" class="span4">
+        <table id="scheduled-cal" class="table table-condensed">
+          <thead>
+            <th></th>
+            <th>M</th>
+            <th>T</th>
+            <th>W</th>
+            <th>Th</th>
+            <th>F</th>
+          </thead>
+          <tbody>
+            <script>
+              for(var i = 8; i<=12; i++) {
+                html = '<tr><td>'+ i.toString() +'</td>';
+                for(var j=0; j<5; j++) {
+                  html+='<td></td>';
+                }
+                document.write(html+'</tr>');
+              }
+              for(var i = 1; i<=9; i++) {
+                html = '<tr><td>'+ i.toString() +'</td>';
+                for(var j=0; j<5; j++) {
+                  html+='<td></td>';
+                }
+                document.write(html+'</tr>');
+              }
+            </script>
+          </tbody>
+        </table>
+        <table id="scheduled-list" class="table">
+          <thead>
+         <!--    <th>Class Name</th>
+            <th>Class Name</th> -->
+          </thead>
+          <tbody>
+            <tr style="background-color: skyblue;">
+              <td>Class 1<br/>Prof1</td>
+              <td>MWF: 3-4pm <br/>TH: 1-5pm</td>
+              <td>CRN: 85692<br/><a href="#">Other Sections</a></td>
+            </tr>
+            <tr style="background-color: lightgreen;">
+              <td>Class 1<br/>Prof1</td>
+              <td>MWF: 3-4pm <br/>TH: 1-5pm</td>
+              <td>CRN: 85692<br/><a href="#">Other Sections</a></td>
+            </tr>
+          </tbody>
       </div>
-    </div>
-    <!-- Search Results -->
-    <div id="ECE2035" class="row-fluid">
-      <div class="span7">
-        <h3><a href="#ECE2035">ECE 2035 - <em>Programming</em> HW/SW Systems</a></h3>
-        <p>
-          Creation of complex execution and storage mechanisms, based on instruction set architecture, for software design including high-level programming languages and operating systems. Programming design projects. Credit not allowed for both ECE 2035 and ECE 3035.
-        </p>
-      </div>
-      <div class="span4 graph">
-        <a> &lt; </a>
-        <div class="chart"></div>
-        <a> &gt; </a>
-      </div>
-    </div>
-    <div id="ECE3035" class="row-fluid">
-      <div class="span7 ">
-        <h3><a href="#ECE2035">ECE 2035 - <em>Programming</em> HW/SW Systems</a></h3>
-        <p> 
-          Creation of complex execution and <em>storage</em> mechanisms, based on <em>instruction</em> set architecture, for software design including high-level programming languages and operating systems. Programming design projects. Credit not allowed for both ECE 2035 and <em>ECE 3035</em>.
-        </p>
-      </div>
-      <div class="span4 graph">
-        <a> &lt; </a>
-        <div class="chart"></div>
-        <a> &gt; </a>
-      </div>
-      </div>
-    </div>
+
+    </div><!-- END LEFT/RIGHT BAR WRAPPER -->
+
   </div><!-- END CONTAINER -->
-
-
-
-    <!-- Le javascript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-     <script src="http://code.jquery.com/jquery.js"></script>
-     <script src="js/bootstrap-transition.js"></script>
-     <script src="js/bootstrap-alert.js"></script>
-     <script src="js/bootstrap-modal.js"></script>
-     <script src="js/bootstrap-dropdown.js"></script>
-     <script src="js/bootstrap-scrollspy.js"></script>
-     <script src="js/bootstrap-tab.js"></script>
-     <script src="js/bootstrap-tooltip.js"></script>
-     <script src="js/bootstrap-popover.js"></script>
-     <script src="js/bootstrap-button.js"></script>
-     <script src="js/bootstrap-collapse.js"></script>
-     <script src="js/bootstrap-carousel.js"></script>
-     <script src="js/bootstrap-typeahead.js"></script>
-     <script src="js/bootstrap-affix.js"></script>
-    <!-- highcharts -->
-     <script src="js/highcharts/highcharts.js"></script>
-     <script src="js/highcharts/highcharts-more.js"></script>
+  <!-- Le javascript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script src="http://code.jquery.com/jquery.js"></script>
+  <script src="js/bootstrap-transition.js"></script>
+  <script src="js/bootstrap-alert.js"></script>
+  <script src="js/bootstrap-modal.js"></script>
+  <script src="js/bootstrap-dropdown.js"></script>
+  <script src="js/bootstrap-scrollspy.js"></script>
+  <script src="js/bootstrap-tab.js"></script>
+  <script src="js/bootstrap-tooltip.js"></script>
+  <script src="js/bootstrap-popover.js"></script>
+  <script src="js/bootstrap-button.js"></script>
+  <script src="js/bootstrap-collapse.js"></script>
+  <script src="js/bootstrap-carousel.js"></script>
+  <script src="js/bootstrap-typeahead.js"></script>
+  <script src="js/bootstrap-affix.js"></script>
+  <!-- highcharts -->
+  <script src="js/highcharts/highcharts.js"></script>
+  <script src="js/highcharts/highcharts-more.js"></script>
      <script>
       $(function() { 
         $(".chart").each(function() { 
