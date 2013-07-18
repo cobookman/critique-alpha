@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>SEARCH QUERY - The Critique</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="Georgia Institute of Technology's Student Body Government (SGA)">
+
+    <!-- Le styles -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <style>
+      .results section { 
+        margin-top: 20px;
+      }
+      .results em { /* Highlighted terms from elastic search */
+        color: rgba(0, 43, 69, 0.75);
+        font-weight: bold;
+      }
+      .results section p {
+        width: 50%;
+      }
+      .search-title {
+        font-size: 1.8em;
+        margin-top:10px;
+      }
+      .searchbar {
+        line-height: normal;
+        background-color: rgba(0, 43, 68, .17);
+        
+      }
+      .searchbar .search-gradient {
+        background-color: rgba(224, 170, 15, .1);      
+      }
+      .btn {
+        border-radius: 0;
+        background-color: rgba(0, 43, 69, .75);
+        background-image: none;
+        box-shadow: none;
+        border-color: rgba(204, 204, 204);
+        margin-left: 3px !important;
+      }
+      .btn:hover, .btn:focus {
+                background-color: #dab94c;
+      }
+
+      /* Fix the Container for searchbar to match navbar */
+      .searchbar > .search-gradient > .container > div {
+        margin-left:-5px;
+      }
+      .searchbar > .search-gradient > .container div {
+        display: inline-block;  
+        margin-right: 20px;
+      }
+      .navbar-inverse .brand, .navbar-inverse .nav > li > a {
+        color: rgb(179, 179, 179);
+
+      }
+      .navbar-inner {
+        min-height: 29px;
+      }
+      /* RESPONSIVE OVERRIDES */
+       @media (max-width: 979px) {
+        .searchbar > .search-gradient > .container {
+          width: auto;
+          padding: 0px;
+          margin-left: 10px;
+        }
+        .searchbar > .search-gradient > .container > div {
+          margin-left: 0px;
+        }
+        .navbar-fixed-top {
+          margin-bottom: 0px !important;
+        }
+      }
+      @media(max-width: 767px) {
+        .searchbar {
+          margin-left: -20px;
+          margin-right: -20px;
+        }
+      }
+
+      /* OVERRIDES TO BOOTSTRAP */
+      body {
+        padding-top: 29px; /* 60px to make the container go all the way to the bottom of the topbar */
+        min-width: 415px; /*pats 415px UI breaks down */
+      }
+      .navbar .brand, .nav > li > a { font-size: 100%; }
+      .navbar .nav > li > a {
+        padding: 4px 10px;
+      }
+      .semester-menu {
+        overflow-y: auto;
+        max-height: 200px;
+      }
+
+      .input-append input {
+        border-radius: 0;
+        min-width: 375px;
+      }
+      .input-append .btn:last-child {
+        border-radius: 0;
+      }
+      /*************************
+        NAV BAR IN GATECH BLUE
+      **************************/
+      /* Turn bar navy */
+      .navbar-inverse .navbar-inner {
+        background-image: none;
+        background-color: rgb(0, 43, 69);
+      }
+  
+
+      /* Turn active to transparent not black*/
+      .navbar-inverse .nav .active > a, .navbar-inverse .nav .active > a:focus {
+        background-color: transparent;
+      }
+
+      /* Hover overs */
+      .navbar-inverse .nav li.dropdown.open > .dropdown-toggle, .navbar-inverse .nav li.dropdown.active > .dropdown-toggle, .navbar-inverse .nav li.dropdown.open.active > .dropdown-toggle, .navbar-inverse .brand, .navbar-inverse .nav > li > a:hover, .navbar-inverse .nav .active > a:focus:hover, .navbar-inverse .nav .active > a:hover {
+        color: #dab94c;
+        background-color: transparent;
+      }
+      
+    </style>
+    <link href="css/bootstrap-responsive.css" rel="stylesheet">
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="../assets/js/html5shiv.js"></script>
+    <![endif]-->
+
+    <!-- Fav and touch icons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../assets/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../assets/ico/apple-touch-icon-114-precomposed.png">
+      <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../assets/ico/apple-touch-icon-72-precomposed.-png">
+                    <link rel="apple-touch-icon-precomposed" href="../assets/ico/apple-touch-icon-57-precomposed.png">
+                                   <link rel="shortcut icon" href="../assets/ico/favicon.png">
+  </head>
+
+  <body>
+    <!-- Top NAVBAR -->
+    <div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="navbar-inner" style="padding:0px;"><!-- Fix bootstrap's responsive navbar padding -->
+        <div class="container">
+            <ul class="nav">
+              <li class="dropdown">
+                <a id="semester" class="brand dropdown-toggle" href="#" data-toggle="dropdown">
+                  Fall 2013 <b class="caret"></b>
+                </a>
+                <ul class="dropdown-menu semester-menu">
+                  <!-- Saved Schedules from User -->
+                  <li><a href="#" tabindex="-1" role="menuitem">Fall 2013: My Fall Semester</a></li>
+                  <li><a href="#" tabindex="-1" role="menuitem">Fall 2014: Future ideas</a></li>
+                  <li><a href="#" tabindex="-1" role="menuitem">Summer 2011: Freshman Term</a></li>
+                  <li class="divider"></li>
+                  <!-- Semester Data -->
+                  <li><a href="#" role="menuitem">Fall 2013</a></li>
+                  <li><a href="#" role="menuitem">Summer 2013</a></li>
+                  <li><a href="#" tabindex="-1" role="menuitem">Spring 2013</a></li>
+                  <li><a href="#" tabindex="-1" role="menuitem">Fall 2012</a></li>
+                  <li><a href="#" tabindex="-1" role="menuitem">Summer 2012</a></li>
+                  <li><a href="#" tabindex="-1" role="menuitem">Spring 2012</a></li>
+                  <li><a href="#" tabindex="-1" role="menuitem">More</a></li>
+                </ul>
+              </li>
+              <li class="active"><a href="#">Search</a></li>
+              <li><a href="#">Calendar</a></li>
+              <li><a href="#about">Share</a></li>
+              <li><a href="#contact">Login</a></li>
+            </ul>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Search Nav -->
+    <div class="searchbar">
+      <div class="search-gradient">
+        <div class="container">
+          <div class="search-title"> Critique </div>
+          <!-- Search Bar -->
+          <div class="input-append">
+            <input id="search-query" type="text" class="input-xxlarge" />
+            <button class="btn"><i class="icon-search icon-white"></i></button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Search Results -->
+    <div class="results container">
+      <section id="ECE2035">
+        <h3>ECE 2035 - <em>Programming</em> HW/SW Systems</h3>
+        <p>Creation of complex execution and storage mechanisms, based on instruction set architecture, for software design including high-level programming languages and operating systems. Programming design projects. Credit not allowed for both ECE 2035 and ECE 3035.</p>
+      </section>
+       <section id="ECE3035">
+        <h3>ECE 2035 - <em>Programming</em> HW/SW Systems</h3>
+        <p>Creation of complex execution and <em>storage</em> mechanisms, based on <em>instruction</em> set architecture, for software design including high-level programming languages and operating systems. Programming design projects. Credit not allowed for both ECE 2035 and <em>ECE 3035</em>.</p>
+      </section>
+    </div>
+
+
+
+    <!-- Le javascript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+     <script src="http://code.jquery.com/jquery.js"></script>
+     <script src="js/bootstrap.min.js"></script>
+  </body>
+</html>

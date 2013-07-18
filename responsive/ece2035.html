@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>SEARCH QUERY - The Critique</title>
+    <title>ECE 2035</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="Georgia Institute of Technology's Student Body Government (SGA)">
@@ -126,7 +126,7 @@
             <a> &gt; </a>
           </div>
           <div class="row-fluid">
-            <button class="btn btn-primary span12">Add Class</button>
+            <button class="btn btn-primary">Add Class</button>
           </div>
         </div>
         
@@ -145,13 +145,25 @@
             <a> &gt; </a>
           </div>
           <div class="row-fluid">
-            <button class="btn btn-primary span12">Add Class</button>
+            <button class="btn btn-primary">Add Class</button>
           </div>
         </div>
 
+        <!-- DISQUS Comment thread -->
+        <div id="disqus_thread" class="row-fluid"></div>
+          <script type="text/javascript">
+            var disqus_shortname = 'coursecritique'; // required: replace example with your forum shortname
+            var disqus_identifier = 'ECE2035';
+            (function() {
+              var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+              dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+              (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+          </script>
+          <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>          
       </div><!-- END LEFT BAR -->
 
-      <div id="rightbar" style="height: 500px; float:right;" class="span4">
+      <div id="rightbar" style="float:right;" class="span4">
         <table id="scheduled-cal" class="table table-condensed">
           <thead>
             <th></th>
@@ -202,11 +214,35 @@
               <td>MWF: 3-4pm <br/>TH: 1-5pm</td>
               <td>CRN: 85692<br/><a href="#">Other Sections</a></td>
             </tr>
+            <tr style="background-color: cyan;">
+              <td style="vertical-align: middle"><button class="btn btn-primary"><b>X</b></button></td>
+              <td>Class 3<br/>Prof3</td>
+              <td>MWF: 3-4pm <br/>TH: 1-5pm</td>
+              <td>CRN: 85692<br/><a href="#">Other Sections</a></td>
+            </tr>
+            <tr style="background-color: lightpink;">
+              <td style="vertical-align: middle"><button class="btn btn-primary"><b>X</b></button></td>
+              <td>Class 4<br/>Prof4</td>
+              <td>MWF: 3-4pm <br/>TH: 1-5pm</td>
+              <td>CRN: 85692<br/><a href="#">Other Sections</a></td>
+            </tr>
+            <tr style="background-color: lightyellow;">
+              <td style="vertical-align: middle"><button class="btn btn-primary"><b>X</b></button></td>
+              <td>Class 5<br/>Prof5</td>
+              <td>MWF: 3-4pm <br/>TH: 1-5pm</td>
+              <td>CRN: 85692<br/><a href="#">Other Sections</a></td>
+            </tr>
+            <tr style="background-color: darksalmon;">
+              <td style="vertical-align: middle"><button class="btn btn-primary"><b>X</b></button></td>
+              <td>Class 6<br/>Prof6</td>
+              <td>MWF: 3-4pm <br/>TH: 1-5pm</td>
+              <td>CRN: 85692<br/><a href="#">Other Sections</a></td>
+            </tr>
           </tbody>
+        </table>
       </div>
 
     </div><!-- END LEFT/RIGHT BAR WRAPPER -->
-
   </div><!-- END CONTAINER -->
   <!-- Le javascript
   ================================================== -->
@@ -235,12 +271,16 @@
           chart: {
             type: 'boxplot',
             inverted: true, //Plaace chart horizontally
+            backgroundColor: null,
+            plotBackgroundColor: null,
+
           },
           credits: {
             enabled: false
           },
           plotOptions: {
             series: { animation: false }, //Disable animation
+            boxplot : { fillColor: 'transparent', color: 'rgb(0, 75, 120)' }
           },
           title: {
             text: ''
@@ -286,6 +326,7 @@
               [0, 0],
               [0, 4]
             ],
+
             marker: {
               fillColor: 'green',
               lineWidth: 1,
@@ -298,6 +339,39 @@
         });
       });
     });//EACH - TEMP MEASURE
+
+  //TEMP CODE -- FOR DEMO PURPOSES ONLY - RESTFUL URL SCHEMA
+  //$(document).ready(function() { history.pushState('/username/fall/2012/ECE2035', "page2", '/colinbookman/2013/FALL/ECE2035'); });
+
+  Array.prototype.shuffle = function() { //v1.0
+    for(var j, x, i = this.length; i; j = parseInt(Math.random() * i), 
+        x = this[--i], this[i] = this[j], this[j] = x);
+    return this;
+  }
+  var colours = [
+     "rgba(255, 128, 203, 0.3)", //magenta
+     "rgba(205,   0, 116, 0.3)", //dark magenta
+     "rgba(141, 175, 255, 0.3)", //cyan
+     "rgba(18,   64, 171, 0.3)", //blue
+     "rgba(255, 170,   0, 0.3)", //dark yellow
+     "rgba(255, 213, 128, 0.3)", //light yellow
+     "rgba(159, 238,   0, 0.3)"  //lime green
+  ];
+  colours.shuffle();
+
+  var profs = document.getElementsByClassName('prof');
+  for(var i=0; i<profs.length; i++) {
+    var prof = profs[i];
+    prof.setAttribute('data-color', colours.pop());
+    prof.onmouseover = function() {
+      this.style.background = this.getAttribute('data-color');
+    }
+    prof.onmouseout = function() {
+      this.style.background = 'transparent';
+    }
+  }
+
+  
      </script>
   </body>
 </html>
