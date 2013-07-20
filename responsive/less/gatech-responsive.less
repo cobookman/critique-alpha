@@ -1,6 +1,6 @@
 //From gatech's CSS
 @media only screen and (min-width: 51.1em) {
-	#logo-wrapper { padding-top: 42px;  }
+	// #logo-wrapper { padding-top: 42px;  }
 }
 @media only screen and (min-width: 31em) and (max-width: 51em) {
 	.navbar-fixed-top {
@@ -19,18 +19,23 @@
 }
 //Fix padding issues w/navs
 @media(max-width: 979px) {
-	.navbar-fixed-top {
-    	margin-bottom: 0px !important;
-	}
-	#logo-wrapper { padding-top: 0px;}
-
+	#globalnav { display: none; }
+	.input-xxlarge { width: 362px; }
 }
 @media (max-width: 767px) {
 	div#siteNav-full, div#logo-wrapper {
 		margin-left: -20px;
 		margin-right: -20px;
 	}
-	.navbar-fixed-top {
-		display: none;
-	}
+  .input-append {
+  	width: 100%;
+  	input {
+  		width: 100% !important;
+  	}
+  	button {
+  		display: none;
+
+  	}
+ 
+  }
 }
