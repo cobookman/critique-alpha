@@ -95,7 +95,7 @@
   <div class="container">
 
     <div class="row-fluid">
-      <div id="leftbar" class="span8">
+      <div id="leftbar" class="span7">
 
         <div id="search-nav" class="row-fluid">
           <div class="input-append">
@@ -163,7 +163,7 @@
           <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>          
       </div><!-- END LEFT BAR -->
 
-      <div id="rightbar" style="float:right;" class="span4">
+      <div id="rightbar" style="float:right;" class="span5">
         <table id="scheduled-cal" class="table table-condensed">
           <thead>
             <th></th>
@@ -178,24 +178,32 @@
               for(var i = 8; i<=12; i++) {
                 html = '<tr><td>'+ i.toString() +'</td>';
                 for(var j=0; j<5; j++) {
-                  html+='<td></td>';
+                  html+='<td id="'+i.toString() + '-'+j+'"></td>';
                 }
                 document.write(html+'</tr>');
               }
               for(var i = 1; i<=9; i++) {
                 html = '<tr><td>'+ i.toString() +'</td>';
                 for(var j=0; j<5; j++) {
-                  html+='<td></td>';
+                  html+='<td id="'+(i+12).toString()+'-'+j+'"></td>';
                 }
                 document.write(html+'</tr>');
               }
+              //Sample filled in schedule
+              document.getElementById('15-0').style.background = 'lightgreen';
+              document.getElementById('15-2').style.background = 'lightgreen';
+              document.getElementById('15-4').style.background = 'lightgreen';
+
+              document.getElementById('10-1').style.background = 'lightgreen';
+              document.getElementById('11-1').style.background = 'lightgreen';
+             
+              document.getElementById('10-3').style.background = 'lightgreen';
+              document.getElementById('11-3').style.background = 'lightgreen';
+
+
             </script>
           </tbody>
         </table>
-          <script>
-          document.getElementById
-          </script>
-
         <table id="scheduled-list" class="table">
           <thead>
          <!--    <th>Class Name</th>
@@ -204,39 +212,39 @@
           <tbody>
             <tr style="background-color: skyblue;">
               <td style="vertical-align: middle"><button class="btn btn-primary"><b>X</b></button></td>
-              <td>Class 1<br/>Prof1</td>
+              <td><a href="#">ECE 2025</a><br/>89395</td>
+              <td><a href="#">Colin Bookman</a><br/>QH6</td>
               <td>MWF: 3-4pm <br/>TH: 1-5pm</td>
-              <td>CRN: 85692<br/><a href="#">Other Sections</a></td>
             </tr>
             <tr style="background-color: lightgreen;">
               <td style="vertical-align: middle"><button class="btn btn-primary"><b>X</b></button></td>
-              <td>Class 2<br/>Prof2</td>
-              <td>MWF: 3-4pm <br/>TH: 1-5pm</td>
-              <td>CRN: 85692<br/><a href="#">Other Sections</a></td>
+              <td><a href="#">ECE 2025</a><br/>89395</td>
+              <td><a href="#">Colin Bookman</a><br/>QH6</td>
+              <td>MWF: 3-4pm <br/>TH: 10-11</td>
             </tr>
             <tr style="background-color: cyan;">
               <td style="vertical-align: middle"><button class="btn btn-primary"><b>X</b></button></td>
-              <td>Class 3<br/>Prof3</td>
+              <td><a href="#">ECE 2025</a><br/>89395</td>
+              <td><a href="#">Colin Bookman</a><br/>QH6</td>
               <td>MWF: 3-4pm <br/>TH: 1-5pm</td>
-              <td>CRN: 85692<br/><a href="#">Other Sections</a></td>
             </tr>
             <tr style="background-color: lightpink;">
               <td style="vertical-align: middle"><button class="btn btn-primary"><b>X</b></button></td>
-              <td>Class 4<br/>Prof4</td>
+              <td><a href="#">ECE 2025</a><br/>89395</td>
+              <td><a href="#">Colin Bookman</a><br/>QH6</td>
               <td>MWF: 3-4pm <br/>TH: 1-5pm</td>
-              <td>CRN: 85692<br/><a href="#">Other Sections</a></td>
             </tr>
             <tr style="background-color: lightyellow;">
               <td style="vertical-align: middle"><button class="btn btn-primary"><b>X</b></button></td>
-              <td>Class 5<br/>Prof5</td>
+              <td><a href="#">ECE 2025</a><br/>89395</td>
+              <td><a href="#">Colin Bookman</a><br/>QH6</td>
               <td>MWF: 3-4pm <br/>TH: 1-5pm</td>
-              <td>CRN: 85692<br/><a href="#">Other Sections</a></td>
             </tr>
             <tr style="background-color: darksalmon;">
               <td style="vertical-align: middle"><button class="btn btn-primary"><b>X</b></button></td>
-              <td>Class 6<br/>Prof6</td>
+              <td><a href="#">ECE 2025</a><br/>89395</td>
+              <td><a href="#">Colin Bookman</a><br/>QH6</td>
               <td>MWF: 3-4pm <br/>TH: 1-5pm</td>
-              <td>CRN: 85692<br/><a href="#">Other Sections</a></td>
             </tr>
           </tbody>
         </table>
@@ -302,7 +310,7 @@
           },
           yAxis: {
             title: {
-              text: 'GPA'
+              text: '<a href="GPA-RAW-1" title="Click for raw GPA scores">GPA</a>'
             },
             min: 0,
             max: 4.0,
