@@ -18,9 +18,16 @@
 	}
 }
 //Fix padding issues w/navs
-@media(max-width: 979px) {
+@media (max-width: 979px) {
 	#globalnav { display: none; }
-	.input-xxlarge { width: 362px; }
+	//Fix Search bars
+	.input-append { width: 100%; }
+	.input-xxlarge { width: 88% !important; }
+
+	//Fix container for full width
+	.container {
+	 width: 95% !important;
+	}
 }
 @media (max-width: 767px) {
 	div#siteNav-full, div#logo-wrapper {

@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>ECE 2035</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="Georgia Institute of Technology's Student Body Government (SGA)">
+
+    <!-- Le styles -->
+    <link rel="stylesheet/less" type="text/css" href="less/bootstrap.less">
+    <link rel="stylesheet/less" type="text/css" href="less/responsive.less">
+    <script src="js/less-1.4.1.min.js"></script>
+
+    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="../assets/js/html5shiv.js"></script>
+    <![endif]-->
+
+    <!-- Fav and touch icons -->
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../assets/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../assets/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../assets/ico/apple-touch-icon-72-precomposed.-png">
+    <link rel="apple-touch-icon-precomposed" href="../assets/ico/apple-touch-icon-57-precomposed.png">
+    <link rel="shortcut icon" href="../assets/ico/favicon.png">
+    <!-- Font Awesome -->
+    <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+    <style>
+  
+    </style>
+  </head>
+
+  <body>
+  <!-- GATECH THEME -->
+  <div id="globalnav" class="navbar">
+    <div class="navbar-inner">
+      <div class="container">
+        <ul class="nav">
+          <li><a href="http://www.gatech.edu"><i class="icon-home"></i>Georgia Tech Home</a></li>
+          <li><a href="http://www.map.gatech.edu"><i class="icon-map-marker"></i>Map</a></li>
+          <li><a href="http://www.gatech.edu/directory"><i class="icon-user"></i>Directory</a></li>
+          <li><a href="http://www.gatech.edu/departments"><i class="icon-building"></i>Offices</a></li>
+        </ul>
+        <ul class="nav pull-right">
+          <li><a href="https://www.facebook.com/georgiatech" title="Facebook" class="facebook">Facebook</a></li>
+          <li><a href="http://www.flickr.com/photos/georgiatech" title="Flickr" class="flickr">Flickr</a></li>
+          <li><a href="https://plus.google.com/+georgiatech/posts" title="Google Plus" class="googleplus">Google Plus</a></li>
+          <li><a href="http://www.linkedin.com/company/3558" title="LinkedIn" class="linkedin">LinkedIn</a></li>
+          <li><a href="http://pinterest.com/georgiatech/" title="Pinterest" class="pinterest">Pinterest</a></li>
+          <li><a href="http://gatech.edu/rss" title="RSS" class="rss">RSS</a></li>
+          <li><a href="https://twitter.com/georgiatech" title="Twitter" class="twitter">Twitter</a></li>
+          <li><a href="http://www.youtube.com/georgiatech" title="YouTube" class="youtube">YouTube</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div id="logo-wrapper">
+    <h1 id="gt-logo">
+      <a href="/" rel="home" title="Georgia Tech Sandbox Site"><img alt="Georgia Tech" src="img/gatech/logos/logo-gt.png"></a>
+    </h1>
+  </div>      
+  <!-- NAVBAR -->
+  <div id="siteNav-full" class="navbar navbar-inverse">
+    <div class="navbar-inner">
+      <div class="container">
+        <ul class="nav">
+          <li class="dropdown">
+            <a id="semester" class="brand dropdown-toggle" href="#" data-toggle="dropdown">
+              Fall 2013 <b class="caret"></b>
+            </a>
+            <ul class="dropdown-menu semester-menu" >
+              <!-- Saved Schedules from User -->
+              <li><a href="#" tabindex="-1">Fall 2013: My Fall Semester</a></li>
+              <li><a href="#" tabindex="-1">Fall 2014: Future ideas</a></li>
+              <li><a href="#" tabindex="-1">Summer 2011: Freshman Term</a></li>
+              <li class="divider"></li>
+              <!-- Semester Data -->
+              <li><a href="#">Fall 2013</a></li>
+              <li><a href="#">Summer 2013</a></li>
+              <li><a href="#" tabindex="-1">Spring 2013</a></li>
+              <li><a href="#" tabindex="-1">Fall 2012</a></li>
+              <li><a href="#" tabindex="-1">Summer 2012</a></li>
+              <li><a href="#" tabindex="-1">Spring 2012</a></li>
+              <li><a href="#" tabindex="-1">More</a></li>
+            </ul>
+          </li>
+          <li><a href="#">Search</a></li>
+          <li class="active"><a href="#">Calendar</a></li>
+          <li><a href="#about">Share</a></li>
+          <li><a href="#contact">Login</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row-fluid">
+
+      <div id="leftbar" class="span7">
+        <div id="calendar" class="row-fluid">
+           <table id="scheduled-cal" class="table table-condensed">
+          <thead>
+            <th></th>
+            <th>M</th>
+            <th>T</th>
+            <th>W</th>
+            <th>Th</th>
+            <th>F</th>
+          </thead>
+          <tbody>
+            <script>
+              for(var i = 8; i<=12; i++) {
+                html = '<tr><td>'+ i.toString() +'</td>';
+                for(var j=0; j<5; j++) {
+                  html+='<td id="'+i.toString() + '-'+j+'"></td>';
+                }
+                document.write(html+'</tr>');
+              }
+              for(var i = 1; i<=9; i++) {
+                html = '<tr><td>'+ i.toString() +'</td>';
+                for(var j=0; j<5; j++) {
+                  html+='<td id="'+(i+12).toString()+'-'+j+'"></td>';
+                }
+                document.write(html+'</tr>');
+              }
+              //Sample filled in schedule
+              document.getElementById('15-0').style.background = 'lightgreen';
+              document.getElementById('15-2').style.background = 'lightgreen';
+              document.getElementById('15-4').style.background = 'lightgreen';
+
+              document.getElementById('10-1').style.background = 'lightgreen';
+              document.getElementById('11-1').style.background = 'lightgreen';
+             
+              document.getElementById('10-3').style.background = 'lightgreen';
+              document.getElementById('11-3').style.background = 'lightgreen';
+
+
+            </script>
+          </tbody>
+        </table>
+        <table id="scheduled-list" class="table">
+          <thead>
+         <!--    <th>Class Name</th>
+            <th>Class Name</th> -->
+          </thead>
+          <tbody>
+            <tr style="background-color: skyblue;">
+              <td style="vertical-align: middle"><button class="btn btn-primary"><b>X</b></button></td>
+              <td><a href="#">ECE 2025</a><br/>89395</td>
+              <td><a href="#">Colin Bookman</a><br/>QH6</td>
+              <td>MWF: 3-4pm <br/>TH: 1-5pm</td>
+            </tr>
+            <tr style="background-color: lightgreen;">
+              <td style="vertical-align: middle"><button class="btn btn-primary"><b>X</b></button></td>
+              <td><a href="#">ECE 2025</a><br/>89395</td>
+              <td><a href="#">Colin Bookman</a><br/>QH6</td>
+              <td>MWF: 3-4pm <br/>TH: 10-11</td>
+            </tr>
+            <tr style="background-color: cyan;">
+              <td style="vertical-align: middle"><button class="btn btn-primary"><b>X</b></button></td>
+              <td><a href="#">ECE 2025</a><br/>89395</td>
+              <td><a href="#">Colin Bookman</a><br/>QH6</td>
+              <td>MWF: 3-4pm <br/>TH: 1-5pm</td>
+            </tr>
+            <tr style="background-color: lightpink;">
+              <td style="vertical-align: middle"><button class="btn btn-primary"><b>X</b></button></td>
+              <td><a href="#">ECE 2025</a><br/>89395</td>
+              <td><a href="#">Colin Bookman</a><br/>QH6</td>
+              <td>MWF: 3-4pm <br/>TH: 1-5pm</td>
+            </tr>
+            <tr style="background-color: lightyellow;">
+              <td style="vertical-align: middle"><button class="btn btn-primary"><b>X</b></button></td>
+              <td><a href="#">ECE 2025</a><br/>89395</td>
+              <td><a href="#">Colin Bookman</a><br/>QH6</td>
+              <td>MWF: 3-4pm <br/>TH: 1-5pm</td>
+            </tr>
+            <tr style="background-color: darksalmon;">
+              <td style="vertical-align: middle"><button class="btn btn-primary"><b>X</b></button></td>
+              <td><a href="#">ECE 2025</a><br/>89395</td>
+              <td><a href="#">Colin Bookman</a><br/>QH6</td>
+              <td>MWF: 3-4pm <br/>TH: 1-5pm</td>
+            </tr>
+          </tbody>
+        </table>
+        </div>              
+      </div><!-- END LEFT BAR -->
+
+      <div id="rightbar" style="float:right;" class="span5">
+         <div id="search-nav" class="row-fluid">
+          <div class="input-append">
+            <input id="search-query" type="text" class="input-xlarge" placeholder="search the critique" />
+            <button class="btn btn-primary"><i class="icon-search icon-white"></i></button>
+          </div>
+        </div>
+
+        <!-- Search Results -->
+        <div id="MATH1502" class="row-fluid">
+          <div class="span12">
+            <h4><a href="#MATH1502-Page">Math 1502 - Intro to calc 2</a></h4>
+            <div class="graph">
+              <a> &lt; </a>
+              <div class="chart"></div>
+              <a> &gt; </a>
+            </div>
+            <table class="table table-bordered table-hover table-condensed table-vertical-align-middle">
+              <tr id="MATH1502-QH6">
+                <td><i class="icon-check"></i></td>
+                <td><a href="#OSCAR">89395</a></td>
+                <td><a href="#OSCAR">QH6</a></td>
+                <td><a href="#PROF-PAGE">Colin Bookman</a></td>
+                <td>MWF 3-4pm<br/>TH 1-2pm</td>
+              </tr>
+              <tr id="MATH1502-QH7">
+                <td><i class="icon-check-empty"></i></td>
+                <td><a href="#OSCAR">89495</a></td>
+                <td><a href="#OSCAR">QH7</a></td>
+                <td><a href="#PROF-PAGE">Colin Bookman</a></td>
+                <td>MWF 2-3pm<br/>TH 1-2pm</td>
+            </table>
+          </div>
+        </div>          
+      </div><!-- END RIGHT BAR -->
+
+    </div><!-- END LEFT/RIGHT BAR WRAPPER -->
+  </div><!-- END CONTAINER -->
+  <!-- Le javascript
+  ================================================== -->
+  <!-- Placed at the end of the document so the pages load faster -->
+  <script src="http://code.jquery.com/jquery.js"></script>
+  <script src="js/bootstrap-transition.js"></script>
+  <script src="js/bootstrap-alert.js"></script>
+  <script src="js/bootstrap-modal.js"></script>
+  <script src="js/bootstrap-dropdown.js"></script>
+  <script src="js/bootstrap-scrollspy.js"></script>
+  <script src="js/bootstrap-tab.js"></script>
+  <script src="js/bootstrap-tooltip.js"></script>
+  <script src="js/bootstrap-popover.js"></script>
+  <script src="js/bootstrap-button.js"></script>
+  <script src="js/bootstrap-collapse.js"></script>
+  <script src="js/bootstrap-carousel.js"></script>
+  <script src="js/bootstrap-typeahead.js"></script>
+  <script src="js/bootstrap-affix.js"></script>
+  <!-- highcharts -->
+  <script src="js/highcharts/highcharts.js"></script>
+  <script src="js/highcharts/highcharts-more.js"></script>
+     <script>
+      $(function() { 
+        $(".chart").each(function() { 
+        $(this).highcharts({
+          chart: {
+            type: 'boxplot',
+            inverted: true, //Plaace chart horizontally
+            backgroundColor: null,
+            plotBackgroundColor: null,
+
+          },
+          credits: {
+            enabled: false
+          },
+          plotOptions: {
+            series: { animation: false }, //Disable animation
+            boxplot : { fillColor: 'transparent', color: 'rgb(0, 75, 120)' }
+          },
+          title: {
+            text: ''
+          },      
+          legend: {
+            enabled: false
+          },
+          xAxis: {
+            title: {
+              text: ''
+            },
+            //Disable axis bar
+            labels: { enabled: false },
+            lineWidth: 0,
+            minorGridLineWidth: 0,
+            lineColor: 'transparent',
+            minorTickLength: 0,
+            tickLength: 0
+          },
+          yAxis: {
+            title: {
+              text: '<a href="GPA-RAW-1" title="Click for raw GPA scores">GPA</a>'
+            },
+            min: 0,
+            max: 4.0,
+            //Disable axis bar
+            gridLineWidth: 0,
+            minorGridLineWidth: 0
+          },
+          series: [{
+            name: 'GPA',
+            data: [
+              [2.1, 2.5, 2.8, 3, 3.2]
+            ],
+            tooltip: {
+              headerFormat: ''
+            }
+          }, {
+            name: 'Outlier',
+            color: Highcharts.getOptions().colors[0],
+            type: 'scatter',
+            data: [ //[chart#, outlier-value]
+              [0, 0],
+              [0, 4]
+            ],
+
+            marker: {
+              fillColor: 'green',
+              lineWidth: 1,
+              lineColor: Highcharts.getOptions().colors[0]
+            },
+            tooltip: {
+              pointFormat: 'GPA: {point.y}'
+            }
+          }]
+        });
+      });
+    });//EACH - TEMP MEASURE
+
+  //TEMP CODE -- FOR DEMO PURPOSES ONLY - RESTFUL URL SCHEMA
+  //$(document).ready(function() { history.pushState('/username/fall/2012/ECE2035', "page2", '/colinbookman/2013/FALL/ECE2035'); });
+
+  Array.prototype.shuffle = function() { //v1.0
+    for(var j, x, i = this.length; i; j = parseInt(Math.random() * i), 
+        x = this[--i], this[i] = this[j], this[j] = x);
+    return this;
+  }
+  var colours = [
+     "rgba(255, 128, 203, 0.3)", //magenta
+     "rgba(205,   0, 116, 0.3)", //dark magenta
+     "rgba(141, 175, 255, 0.3)", //cyan
+     "rgba(18,   64, 171, 0.3)", //blue
+     "rgba(255, 170,   0, 0.3)", //dark yellow
+     "rgba(255, 213, 128, 0.3)", //light yellow
+     "rgba(159, 238,   0, 0.3)"  //lime green
+  ];
+  colours.shuffle();
+
+  var profs = document.getElementsByClassName('prof');
+  for(var i=0; i<profs.length; i++) {
+    var prof = profs[i];
+    prof.setAttribute('data-color', colours.pop());
+    prof.onmouseover = function() {
+      this.style.background = this.getAttribute('data-color');
+    }
+    prof.onmouseout = function() {
+      this.style.background = 'transparent';
+    }
+  }
+
+  
+     </script>
+  </body>
+</html>
